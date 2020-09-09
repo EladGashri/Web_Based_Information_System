@@ -1,0 +1,13 @@
+.terms{
+    position: relative;
+    text-align: center;
+    color: black;
+    font-family: "Lucida Blackletter", eufm10, blackletter, serif;
+    font-weight: bold;
+    font-size: 100%;
+    line-height: 2.5;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+}
+

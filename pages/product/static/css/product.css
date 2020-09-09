@@ -1,0 +1,42 @@
+img{
+    border-bottom-right-radius: 24px;
+    border-top-left-radius: 24px;
+}
+
+.product{
+    margin-left: 25em;
+    width: 60%;
+}
+.description{
+    width: 40%;
+    float: right;
+}
+.add{
+    display:block;
+    margin-top: 3em;
+}
+.like{
+    display:inline-block;
+    margin-left: 25em;
+    margin-bottom: 5em;
+}
+.like img:hover{
+    opacity: 0.5;
+    transition-duration: 1.2s;
+}
+p{
+    font: 15px Arial, sans-serif;
+    color: black;
+}
+
+#sub:hover{
+    color: black;
+    font-weight: bold;
+}
+
+section a{
+    text-decoration: underline;
+    font-weight: bold;
+    color: black;
+}
+

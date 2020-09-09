@@ -1,0 +1,56 @@
+.product p{
+    text-align: center;
+}
+.product h1{
+    text-align: center;
+}
+
+.product{
+    position: relative;
+    padding-bottom: 5%;
+}
+.reg{
+    position: absolute;
+    right: 10%;
+}
+
+.reg2{
+    position: absolute;
+    left: 15%;
+}
+.product input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.reg3{
+    position: relative;
+    text-align: center;
+    top: 700px;
+    padding-bottom: 10%;
+}
+.reg5 {
+    text-align: center;
+    text-decoration: none;
+}
+
+/*
+
+.register{
+    margin-left:15em;
+}
+.company{
+    margin-top: 4em;
+}
+.contact{
+    margin-left: 5em;
+}
+
+.register3{
+    margin-bottom:2em;
+    margin-left:20em;
+}
+
+.register4{
+    margin-left:10em;
+}
+*/

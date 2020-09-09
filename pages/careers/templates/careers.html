@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Careers' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('careers.static', filename='css/careers.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+    <section class="careers">
+
+        <h1>Reliability Maintenance Engineering</h1>
+        <p>
+            Here at MedEquip we are looking to hire an experienced Reliability Maintenance Engineering (RME) Technician to join the team in our highly automated and fast paced Fulfilment Centers (FC).
+            <br>
+            Purpose of the Job:
+            The focus of this role is to ensure safety regulations and policies are adhered to, to ensure preventative maintenance is conducted on time to a high standard and to provide high levels of equipment availability
+            through continuous improvement.
+            <br>
+        <h3>Responsibilities</h3>
+        <ul>
+            <li>Put health & safety best practices first in all work carried out.</li>
+            <li>Carry out planned preventative maintenance on the full range of equipment within the site.</li>
+            <li>React quickly to breakdowns, communicate clearly with affected parties and work efficiently to fix the issue.</li>
+            <li>Support continuous improvement by learning from breakdowns and sending feedback and suggestions for improvements through the line manager.</li>
+            <li>Provide high levels of equipment availability to our customers.</li>
+            <li>Support and learn from Senior Maintenance Technicians.</li>
+
+        </ul>
+
+        <h3>BASIC QUALIFICATIONS</h3>
+        <ul>
+            <li>Served a full engineering indentured apprenticeship and/or qualified to a minimum of NVQ level 3 or equivalent</li>
+            <li>Multi skilled in both electrical and mechanical disciplines</li>
+            <li>Experience of planned preventative maintenance systems</li>
+            <li>Experience fault finding within MHE/Automation systems</li>
+            <li>Ability to read and understand mechanical and electrical drawings</li>
+            <li>Basic workshop skills</li>
+            <li>Experience of conveyor maintenance, motor controllers/inverters</li>
+            <li>Experience of working to appropriate health & safety standards and regulations</li>
+            <li>Experience of contractor management</li>
+            <li>Ability to work shifts in a 24/7 environment</li>
+        </ul>
+        </p>
+
+        <h3>Qualified and interested? send your CV <a href="mailto: careers@med-equipt.com"> here </a></h3>
+
+
+    </section>
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('careers.static', filename='js/careers.js') }}"></script>
+{% endblock %}

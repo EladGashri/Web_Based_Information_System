@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('homepage.static', filename='css/homepage.css') }}"/>
+{% endblock %}
+
+{% set page_head_title = 'Homepage' %}
+
+{% block page_body_main_content %}
+
+
+    <section class="main">
+        <h1 id="yj">"A wise man once told me, <br> it is better being healthy,<br> than being sick". Elad Gashri, CEO</h1>
+         <div class="cor">
+             {% for item in corona_items %}
+             <a href="/product?id={{item.item_id}}"> <img title={{item.item_name}}
+                                                                  src="{{ url_for('homepage.static', filename=item.item_img) }}" > </a>
+             <!-- <a id="cor1" href="pages/catalog/templates/corona/gloves.html"></a>
+              <a href="pages/catalog/templates/corona/kits.html"></a>
+              <a id="cor3" href="pages/catalog/templates/corona/masks.html"></a>-->
+             {% endfor %}
+
+          </div>
+        <a class="virus" href="{{ url_for('corona.index') }}">Defeat The Disease<br>Win Corona virus, click here</a>
+        <a class="men" href="{{ url_for('psy.index') }}">Conquer Your Spirit<span>Feel relaxed and calm, click here</span></a>
+
+           <div class="mental">
+               {% for item in psy_items %}
+                   <a href="/product?id={{item.item_id}}"> <img title={{item.item_name}}
+                                                                        src="{{ url_for('homepage.static', filename=item.item_img) }}" > </a>
+               {% endfor %}
+           <!--    <a id="men1" href="pages/catalog/templates/psy/dbs.html"></a>
+               <a href="pages/catalog/templates/psy/mst.html"></a>
+               <a id="men3" href="pages/catalog/templates/psy/vns.html"></a>-->
+           </div>
+
+         <h1 id="eg">"The importance of the health of the mind, <br> far surpasses that of the body". <br>Yonatan Jenudi, CFO</h1>
+         <h1 id="er">"The body is the vessel, <br> through which humanity manifests". <br>Eli Rozner, CCO</h1>
+            <div class="onco">
+                {% for item in onco_items %}
+                    <a href="/product?id={{item.item_id}}"> <img title={{item.item_name}} src="{{ url_for('homepage.static', filename=item.item_img) }}" > </a>
+                {% endfor %}
+
+              <!--  <a id="onco1" href="pages/catalog/templates/onco/ct.html"></a>
+                <a href="pages/catalog/templates/onco/mri.html"></a>
+                <a id="onco3" href="pages/catalog/templates/onco/oxygen.html"></a>-->
+            </div>
+            <a class="onco-sec" href="{{ url_for('onco.index') }}">Win The War<span>Let us help you, click here</span></a>
+
+    </section>
+
+{% endblock %}
+

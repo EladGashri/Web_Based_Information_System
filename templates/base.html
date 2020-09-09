@@ -1,0 +1,90 @@
+<html lang="{{ page_lang|default("en", true) }}">
+<head>
+    {% block page_head %}
+        <title>{{ page_head_title_author|default('Yonatan Jenudi, Elad Gashri, Eli Rozner', true) }} | {{ page_head_title|default('Med-Equipment', true) }}</title>
+        {% block page_head_meta %}
+            <base href="/"/>
+            <meta charset="UTF-8"/>
+            <meta name="author" content="Yonatan Jenudi, Elad Gashri, Eli Rozner"/>
+            <meta name="description" content="Medical equipment in the fields of Corona Virus, Oncology and Psychiatry"/>
+            <meta name="keywords" content="Medical equipment, Corona, Oncology, Psychiatry"/>
+            {% block page_head_meta_extra %}{% endblock %}
+        {% endblock %}
+        <link rel="icon" href="{{ url_for('static', filename='media/img/favicon/favicon.ico') }}"/>
+        <base href="/"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}"/>
+        {% block page_head_css %}
+        {% endblock %}
+    {% endblock %}
+</head>
+<body>
+{% block page_body_content %}
+    {% block page_body_header %}
+        <header class="page-header">
+            {% block page_body_header_content %}
+          <div class="parent" > <a id="header-title" href="{{ url_for('homepage.index') }}">Med-Equipment.</a>
+              <div class="wrap"> <strong id="sub-title">Corona. Psychiatry. Oncology.</strong>
+              </div>
+              </div>
+
+                <form method="post" action="/homepage">
+
+                <input id="search_bar" type="text" name='email' placeholder="Enter your E-mail here...">
+                    <button id="search_bar_b" type="submit">Get news and updates</button>
+
+                </form>
+                {% if 'logged-in' in session%}
+                    {% if session['name']=='dba' %}
+                        <a class="member" href="{{ url_for('logout.index') }}">Hello,
+                        {{ session['name'] }}
+                        <br> Sign out here</a>
+                        <a id="user" href="{{ url_for('dba.index') }}">DBA Content management page</a>
+                    {% else %}
+                        <a id="cart" href="{{ url_for('cart.index') }}"><img src="../static/media/img/cart.png" alt=" " width="72" height="72"></a>
+                        <b class="cart_number">{{ session['cart_amount'] }}</b>
+                        <a class="member" href="{{ url_for('logout.index') }}">Hello,
+                        {{ session['name'] }}
+                        <br> Sign out here</a>
+                        <a id="user" href="{{ url_for('user.index') }}">Personal user page</a>
+                    {% endif %}
+                {% else %}
+                    <a class="member" href="{{ url_for('login.index') }}">Hello, guest!
+                    <br>Sign in here  </a>
+                    <a  id="login" href="{{ url_for('register.index') }}">Not a member? <br>Register here</a>
+
+                {% endif %}
+                {% block page_body_header_content__main_menu %}
+                    <nav class="main-menu">
+                        {% block page_body_header_content__main_menu_content %}
+                            <ul>
+                                {% block page_body_header_content__main_menu_content_links %}
+                                    {% include 'main_menu.html' %}
+                                {% endblock %}
+                            </ul>
+                        {% endblock %}
+                    </nav>
+                {% endblock %}
+            {% endblock %}
+        </header>
+    {% endblock %}
+    <br><br>
+    {% block page_body_main %}
+        <main class="page-main">
+            {% block page_body_main_content %}
+            {% endblock %}
+        </main>
+    {% endblock %}
+    {% block page_body_footer %}
+        <footer>
+            {% block page_body_footer_content %}
+                <a id="careers" href="{{ url_for('careers.index') }}">Careers</a>
+                <a id="contact_us" href="{{ url_for('contact.index') }}">Contact Us</a>
+                <strong id="rights">All Rights Reserved for Med-Equip LTD</strong>
+            {% endblock %}
+        </footer>
+    {% endblock %}
+{% endblock %}
+<script src="{{ url_for('static', filename='js/base.js') }}"></script>
+{% block page_body_js %}{% endblock %}
+</body>
+</html>

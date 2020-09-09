@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'cart' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('cart.static', filename='css/cart.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+    <section class="cart">
+
+    {% if checkout %}
+
+        <h1>Thank you for your purchase! Your credit card was charged and your order is on it's way. <br>
+        You can continue shopping from our
+            <a href="{{ url_for('catalog.index') }}">
+                 catalog.
+            </a> </h1>
+    {% else %}
+        {% if cart_items %}
+            {% for item in cart_items %}
+        <p >{{item.item_name}}</p><br>
+        <a  href="./product?id={{item.item_id}}"> <img title={{item.item_name}} src="{{ url_for('catalog.static', filename=item.item_img) }}"> </a>
+        <p >Amount: {{item.amount}}</p>
+                <p >Single item price: {{"{:,.2f}".format(item.price)}} $</p>
+
+                <form action="/cart" method="post">
+
+                <input type="number" id="quantity" name='new_q' min="1" max="200">
+
+                <input type="hidden" name='id' value='{{ item.item_id }}'>
+                <input id="sub" type="reset">
+
+                <button id="sub" type="submit">Change amount</button>
+                </form>
+
+                <form action="/cart" method="post">
+                    <input type="hidden" name='remove_item' value='{{ item.item_id }}'>
+                <button id="sub" type="submit">Remove Product</button>
+                </form>
+
+            {% endfor %}
+
+                Total price: {{"{:,.2f}".format(session['cart_price'])}} $ <br>
+
+            <form action="/cart" method="post">
+
+                <input type="hidden" name='checkout' value='{{ session['cart_price'] }}'>
+
+              <br>  <button id="sub" type="submit">Check out</button>  <br>
+
+            </form>
+
+
+            {% else %}
+                <h1>Your cart is empty, you can select items from our
+                    <a href="{{ url_for('catalog.index') }}">
+                        innovative catalog
+                    </a>
+
+
+                </h1>
+
+        {% endif %}
+
+    {% endif %}
+        <br><br><br><br><br><br>
+    </section>
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('cart.static', filename='js/cart.js') }}"></script>
+{% endblock %}

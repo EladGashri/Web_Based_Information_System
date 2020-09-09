@@ -1,0 +1,15 @@
+.login{
+    text-align: center;
+    align-items: center;
+}
+#pass{
+    top: 30%;
+    position: absolute;
+    align-self: center;
+    left: 40%;
+}
+
+#logout{
+    text-align: center;
+    color: black;
+}

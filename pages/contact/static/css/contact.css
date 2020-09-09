@@ -1,0 +1,20 @@
+.contacts {
+    position: relative;
+    text-align: center;
+    color: black;
+    font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
+    font-weight: bolder;
+}
+h1{
+    top: 30%;
+}
+#contact_text{
+    bottom: 20%;
+}
+#contact_text:hover{
+    font-weight: bold;
+    bottom: 20%;
+}
+
+
+

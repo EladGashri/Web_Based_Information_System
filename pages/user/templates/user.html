@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'user' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('user.static', filename='css/user.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+
+    <div class="user">
+
+
+
+    {% if session['logged-in'] %}
+        <img  id="win" src="{{ url_for('user.static', filename='media/img/win.jpeg') }}" width="420" height="420" class="win">
+
+        <div class="dit">
+
+            <h1>User Page</h1>
+            <b>User details:</b>
+            <p class="details">
+                {% if private %}
+                    First Name: {{ user_details.first_name }} <br>
+                    Last Name: {{ user_details.last_name }}  <br>
+                {% else %}
+                    Company Name: {{ user_details.company_name }} <br>
+                    Contact Person: {{ user_details.contact_person }}  <br>
+                    Licence Number: {{ user_details.licence_number }}  <br>
+                {% endif %}
+                User Name: {{ user_details.user_name }} <br>
+                Email adress: {{ user_details.email }} <br>
+                Phome Number: {{ user_details.phone_number }} <br>
+                Street Name: {{ user_details.street }} <br>
+                Street Number: {{ user_details.st_number }} <br>
+                City: {{ user_details.city }} <br>
+            </p>
+
+        </div>
+
+        <div class="past">
+
+            <b>Past purchases:</b><br><br>
+            {% for item in purchased_items %}
+                {{ item.purchase_date }}<br>
+                {{ item.item_name }} <br>
+                Amount: {{ item.amount }} <br>
+                <a href="./product?id={{item.it_id}}"> <img title={{item.item_name}} src="{{ url_for('user.static', filename=item.item_img) }}" width="100" height="100"> </a>
+                </p>
+            {% endfor %}
+
+        </div>
+        <br>
+
+        <div class="change">
+
+        Please submit any changes you would like to make to your personal details:<br><br>
+        <form method="post" action="/user">
+            <b>Email</b><br> <br><input type="email" name='email' placeholder="Enter Email Address"><br><br>
+            <b>Phone Number</b> (including country calling code) <br><br><input type="tel"  name='phone_number' minlength="10" placeholder="Phone Number"><br><br>
+            <b>Street</b><br><br><input type="text" name='street' placeholder="Enter Street Name"> <br><br>
+            <b>Street Number</b><br><br><input type='number' name="st_number" maxlength="3" placeholder="Enter Street Number"><br><br>
+            <b>City</b><br><br><input type="text" name='city' placeholder="Enter City"> <br><br>
+            <button type="submit">Submit changes</button>
+        </form>
+
+        </div>
+
+
+        <div class="may">
+
+        <h3> According to our database you might also like the following products :</h3>
+            <a href="./product?id={{recommended_items[0].item_id}}"> <img title={{recommended_items[0].item_name}} src="{{ url_for('user.static', filename=recommended_items[0].item_img) }}" width="100" height="100"> </a>
+            <a href="./product?id={{recommended_items[1].item_id}}"> <img title={{recommended_items[1].item_name}} src="{{ url_for('user.static', filename=recommended_items[1].item_img) }}" width="100" height="100"> </a>
+            <a href="./product?id={{recommended_items[2].item_id}}"> <img title={{recommended_items[2].item_name}} src="{{ url_for('user.static', filename=recommended_items[2].item_img) }}" width="100" height="100"> </a>
+
+
+        </div>
+
+        <div class="manager">
+            <p>
+                We at Med-Equipment© take your privacy very seriously. <br>All details listed here and in every other part of our website are completely confidential.<br>
+                Please contact you assigned customer manager in order to update the details written here or for any other question :  <br>
+                Customer manager name: {{customer_manager.first_name}} {{customer_manager.last_name}} <br>
+                Phone_number: {{customer_manager.phone_num}}  <br>
+                Or alternatively, leave us a message <a href="{{url_for("contact.index")}}">here</a>
+            </p>
+        </div>
+
+
+    {% else %}
+
+        <div class="log">
+
+        <h2>Please <a href="/login">log-in</a> in order to see your user details. </h2>
+
+        </div>
+
+    {% endif %}
+
+{% endblock %}
+
+</div>
+
+{% block page_body_js %}
+    <script src="{{ url_for('user.static', filename='js/user.js') }}"></script>
+{% endblock %}

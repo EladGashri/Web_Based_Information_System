@@ -1,0 +1,31 @@
+.about{
+    position: relative;
+    text-align: center;
+    color: black;
+    font-family: "Lucida Blackletter", eufm10, blackletter, serif;
+    font-weight: bold;
+}
+.we{
+    font-size: 150%;
+    line-height: 2.5;
+    padding-left: 5%;
+    padding-right: 5%;
+
+}
+.ab{
+    display: inline-block;
+    text-align: center;
+    font-size: 120%;
+    line-height: 2.5;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.ab:hover{
+    color: dimgrey;
+    transition-duration: 1.4s;
+}
+
+.about a{
+    color: black;
+}

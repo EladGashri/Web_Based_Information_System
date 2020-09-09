@@ -1,0 +1,95 @@
+h1{
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    word-spacing: 10px;
+    letter-spacing: 5px;
+    font-size: 30px;
+}
+
+h2{
+    font-weight: bold;
+    color: black;
+    letter-spacing: 3px;
+    font-size: 24px;
+}
+
+.instructions{
+    font-size: 16px;
+    font-style: italic;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table_name{
+    text-align: center;
+}
+
+.create_feilds{
+    font-size: 15px;
+    font-style: oblique;
+    line-height: 1.6;
+}
+.create{
+        padding-left: 5%;
+}
+
+.update{
+    font-size: 15px;
+    font-style: oblique;
+    line-height: 1.6;
+    padding-left: 5%;
+}
+
+.insert{
+    font-size: 15px;
+    font-style: oblique;
+    line-height: 1.6;
+    padding-left: 5%;
+}
+
+.tables{
+    text-align: center;
+}
+
+ul{
+    display: table;
+    margin: 0 auto;
+    font-size: 17px;
+}
+
+.drop{
+    text-align: center;
+}
+
+.tables_data{
+    font-size: 15px;
+    font-style: oblique;
+    line-height: 1.6;
+}
+
+#message{
+    font-size: 15px;
+    text-align: center;
+    font-family:"Arial Black", Gadget, sans-serif;
+}
+
+
+.tables a{
+    font-weight: bold;
+    color: black;
+    word-spacing: 10px;
+    letter-spacing: 5px;
+    font-size: 15px;
+}
+
+a:hover {
+  color: red;
+}
+
+aside{
+    display:inline-block;
+}

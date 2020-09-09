@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'About' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('about.static', filename='css/about.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+    <section class="about">
+
+    <p class="we">
+
+        This site was built by <a href="https://www.linkedin.com/in/elad-gashri-400582176/" > Elad Gashri,</a> <a href="https://www.linkedin.com/in/yjenudi/"> Dr. Yonatan Jenudi</a> and Eli Rozner. It is the outcome of the course 'Information Systems and Databases Engineering' taken in Tel Aviv University, Faculty of Engineering, as part of the BS.c degree 'Sciences for Hi-Tech.' In this course, we learned and implemented the very fundamental steps of developing a site from scratch. The first part was theoretical: We formulated an idea, investigated similar companies and websites, evaluated them by their UX\UI, detailed our concept in an ERD scheme, and converted the plan into a rational model diagram. The second part was technical; we built and designed a site that will fit the company needs. We used HTML, CSS, Flask, Jinja2, and constructed a database using MySql. Finally, we integrated all the components that the user will be able to register, purchase, and contact us as the database changes accordingly.
+        We want to thank our fantastic teacher, Barak Pinchovski, who was able to teach us so much in one semester and under unusual conditions of the Corona pandemic's uncertainty. We also want to thank our great practitioner Bar Singfer. For more information about our company's idea in the next paragraph.
+<br>
+
+    </p>
+
+    <p class="ab">
+        Med-Equipment is an innovative medical products solutions company, specializes in 3 branches: Coronavirus equipment, Oncology and Brain stimulation psychiatry products. Our company offers door-to-door supply of the most cutting-edge medical devices in three of the world's argent health challenges that is currently facing. We provide medical equipment from the utmost quality manufacturers around the world, and quality and safety are our first priorities. We provide to both public and private sector, including Hospitals, local health centers, and private citizens.
+    </p>
+    </section>
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('about.static', filename='js/about.js') }}"></script>
+{% endblock %}

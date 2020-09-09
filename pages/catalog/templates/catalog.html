@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Catalog' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('catalog.static', filename='css/catalog.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+
+            {%
+            set catalog_pages = {
+                'catalog': url_for('catalog.index'),
+                'corona': url_for('corona.index'),
+                'oncology': url_for('onco.index'),
+                'psychiatry': url_for('psy.index'),
+                'sale': url_for('sale.index'),
+            }
+            %}
+<section class="catalog">
+    {% for page in catalog_pages %}
+
+                    {% if catalog_pages[page] == request.path %}
+
+                      <h1>Welcome to our {{ page }} page</h1><br>
+
+                        <div class="one">
+                        {% for item in items %}
+
+                                    <p class="two">{{item.item_name}}</p><br>
+                                    <a class="two" href="./product?id={{item.item_id}}"> <img title={{item.item_name}} src="{{ url_for('catalog.static', filename=item.item_img) }}"> </a>
+
+
+                            {% if item.discount_percent %}
+
+                                    <p class="three"> <del>Price: {{"{:,.2f}".format(item.price)}} </del> $ </p>
+                                    <p class="three"> <b> Discount: {{ item.discount_percent}}%  </b> </p>
+                                    <p class="three" > <b> Price after discount: {{"{:,.2f}".format(item.price * ((100-item.discount_percent)/100))}}  $ </b> </p><br>
+                                {% else %}
+                                    <p class="three"> Price: {{"{:,.2f}".format(item.price)}}  $ </p><br>
+
+                            {% endif %}
+
+
+                        {% endfor %}
+                        </div>
+                    {% endif %}
+
+    {% endfor %}
+
+</section>
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('catalog.static', filename='js/catalog.js') }}"></script>
+{% endblock %}
+
+
+
+</section>

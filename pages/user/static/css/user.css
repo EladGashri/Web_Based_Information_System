@@ -1,0 +1,71 @@
+.user {
+    position: relative;
+}
+
+#win{
+    position: absolute;
+    top: 200px;
+    left: 3%;
+    width: 30%;
+}
+
+.dit{
+    position: absolute;
+    top: 200px;
+    left: 36%;
+    line-height: 1.5;
+}
+
+.past {
+    position: absolute;
+    padding-top: 3%;
+    left: 80%;
+}
+
+.manager {
+    position: absolute;
+    padding-top: 3%;
+    left: 3%;
+}
+
+.change {
+    position: absolute;
+    top: 600px;
+    left: 36%;
+}
+
+.may {
+    position: absolute;
+    top: 1100px;
+    left: 4%;
+    padding-bottom: 5%;
+}
+
+
+/*
+h3{
+    font-size: 20px;
+}
+
+.dit{
+  display:inline-block;
+  vertical-align:top;
+  margin-left: 12em;
+  font-size: 20px;
+}
+
+.past{
+  display:inline-block;
+  vertical-align:top;
+  vertical-align:top;
+  margin-left: 12em;
+    margin-top: 3em;
+
+
+}
+
+.manager{
+    margin-top:11em;
+    font-style: oblique;
+    font-size: 17px;
+}*/

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% set page_head_title = 'login' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('login.static', filename='css/login.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <section class="login">
+
+    <h1>Sign In</h1>
+
+    <form class="log" action="/login" method="post" novalidate>
+            {{ form.hidden_tag() }}
+        <p> {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+            {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %} </p>  <br>
+        <p> {{ form.password.label }}<br>
+            {{ form.password(size=32) }}<br>
+            {% for error in form.password.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}  </p>
+        <p id="remember">{{ form.submit() }}</p>
+    </section>
+
+{% endblock %}
+{% block page_body_js %}
+    <script src="{{ url_for('login.static', filename='js/login.js') }}"></script>
+{% endblock %}

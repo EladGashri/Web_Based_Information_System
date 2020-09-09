@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'terms' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('terms.static', filename='css/terms.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+    <section class="terms">
+
+    <p class="terms">
+        Terms of Use: <br>
+        Our Terms of Use describe rules for visitors to this MedEquipment website. This website is owned and
+        operated by MedEquipment. When we use the words we or our, we mean MedEquipment. You should review
+        the terms of use posted on these MedEquipment website when you visit it.<br>
+        These Terms of Use were last updated on July 07, 2020. We may change these Terms of Use at any time.
+        Please review the Terms of Use each time you visit the website. By using this website, it means you accept
+        the most recent version of the Terms of Use.<br>
+        This website does not provide medical advice. If you think you may have a medical emergency, call your
+        doctor or the emergency services in your local country immediately.<br>
+        About the information on this website: Much of the information on this website relates to products offered by
+        MedEquipment. The materials on this website are for your general educational information only. Information
+        you read on this website cannot replace the relationship that you have with your healthcare professional.
+        MedEquipment does not practice medicine or provide medical services or advice and the information on this
+        website should not be considered medical advice. You should always talk to your healthcare professional for
+        diagnosis and treatment.<br>
+        Health information changes quickly. Therefore, it is always best to confirm information with your healthcare
+        professional.<br>
+        Privacy statement:<br>
+        Privacy is important to us. We understand that privacy is important to you. This Privacy Statement tells you
+        how we protect and use information that we gather through this website, based in the Israel. By using this
+        website, you agree to the terms of the most recent version of this Privacy Statement. Please read our Terms of
+        Use to understand the general rules about your use of this website. Except as written in any other disclaimers,
+        policies, terms of use, or other notices on this website, this Privacy Statement and the Terms of Use are the
+        complete agreement between you and MedEquipment with respect to your use of this website. You may be
+        subject to additional terms that may apply when you access specific materials on certain areas in this website,
+        or when you follow a link from it.<br>
+        MedEquipment will not share your personal information collected from this website with an unrelated thirdparty without your permission, except as otherwise provided in this Privacy Statement.
+        In the ordinary course of business, we will share some personal information with companies that we hire to
+        perform services or functions on our behalf. For example, we may use different vendors or suppliers to ship
+        you products that you order on our website. In these cases, we provide the vendor with information to process
+        your order such as your name and mailing address. In cases in which we share your personal information with
+        a third-party, we will not authorize them to keep, disclose or use your information with others except for the
+        purpose of providing the services we asked them to provide.<br>
+        We may be legally compelled to release your personal information in response to a court order, subpoena,
+        search warrant, law or regulation. We may cooperate with law enforcement authorities in investigating and
+        prosecuting website visitors who violate our rules or engage in behavior which is harmful to other visitors (or
+        illegal).<br>
+        We may disclose your personal information to third parties when we feel that the disclosure is necessary to:
+        Enforce this Privacy Statement and the other rules about your use of this website, protect our rights or property,
+        protect someone's health, safety or welfare, fulfill obligations relating to a corporate sale, merger, dissolution,
+        or acquisition, comply with a law or regulation, court order or other legal process.
+        </p>
+    </section>
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('terms.static', filename='js/terms.js') }}"></script>
+{% endblock %}
