@@ -2,7 +2,4 @@ Conceptual analysis of database to entity–relationship diagram. Logical analys
 
 Backend development with Python, Flask, MySQL. Frontend development with HTML5, CSS3.
 
-Website includes:
--Multiple product pages accessible through 3 catalog pages.
--Registration and login functionalities.
--Personal user page, interface for DBA to view database and perform CRUD operations.
+Website includes: multiple product pages accessible through 3 catalog pages, registration and login functionalities, personal user page, interface for DBA to view database and perform CRUD operations.
